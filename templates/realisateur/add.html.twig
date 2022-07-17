@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un film!{% endblock %}
+
+{% block body %}
+
+    {# {{ form(formAddFilm) }} #}
+          {{ form_start(formAddRealisateur) }}
+          {{ form_errors(formAddRealisateur) }}
+               <div class="container">
+                    <div class="row">
+                         <div class="col-4 mb-4 mt-4">
+                              {{ form_row(formAddRealisateur.nom) }}
+                         </div>
+                         <div class="col-4 mb-4 mt-4">
+                              {{ form_row(formAddRealisateur.prenom) }}
+                         </div>
+                         <div class="col-4 mb-4 mt-4">   
+                              {{ form_row(formAddRealisateur.dateNaissance) }}
+                         </div>
+                         <div class="col-4 mb-4">   
+                              {{ form_row(formAddRealisateur.sexe) }}
+                         </div>
+                         <div class="col-4 mb-4">   
+                              {{ form_row(formAddRealisateur.imageRealisateur) }}
+                         </div>
+                         <div class="col-4">        
+                              {{ form_row(formAddRealisateur.biographie) }}
+                         </div>
+                          <div class="col-4">        
+                              {{ form_row(formAddRealisateur.origine) }}
+                         </div>
+                         <div class="row">
+                         <div class="col-4 mt-4">   
+                              {{ form_row(formAddRealisateur.submit, { 'label': 'Submit me' }) }}
+                         </div>
+                         </div>     
+                    </div>   
+               </div> 
+     {{ form_end(formAddRealisateur) }}
+    
+
+{% endblock %}
+
+
+
+
+
+
+

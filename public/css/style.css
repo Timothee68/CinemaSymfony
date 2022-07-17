@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width:100%;
+    height: auto;
+    margin:auto;
+    /* max-height: 120px !important; */
+    /* object-fit: contain; */
+}
+
+a {
+    color: rgb(255, 255, 255) !important;
+    text-decoration: none !important;
+}
+
+nav a{
+    font-size: 1.8rem;
+    margin-left: 40px;
+    color: rgb(250, 250, 250) !important;
+}
+.filmographie{
+    color:black !important;
+}
+footer nav a{
+    color:black !important;
+    margin:20px;
+    /* font-size: 10px; */
+}
+
+.genre a{ 
+    color: rgb(0, 0, 0) !important;;
+}
+
+.fa-star{
+    font-size:x-large !important;
+    color: rgb(223, 223, 51);
+}
+
+.fa-trash{
+    color: rgb(134, 30, 30) !important;
+   
+}
+.fa-trash:hover{
+    color: rgb(255, 0, 0) !important;
+   
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des genres!{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1 class="mb-5 text-center">Liste des genres</h1>
+    <div class="row">
+        <div class="d-flex justify-content-evenly">
+            <button type="button" class="btn btn-lg bg-secondary col-4"><a href="{{ path('add_genre') }}">Ajouter une catégorie</a></button>
+            {# <button type="button" class="btn btn-lg bg-secondary col-4"><a href="#">Ajouter catégorie à un film</a></button> #}
+        </div>    
+        <div class="row row-cols-md-4 g-4 mt-5 d-flex justify-content-evenly">
+            {% for genre in genres %}
+                <div class="card m-2 bg-dark">
+                    <div class="card-body text-center bg-dark">
+                        <h5><a href="{{ path('detail_genre', {'id': genre.id} ) }}">{{genre.libelle }}</a></h5>
+                        <h5 style='color:rgb(255, 255, 255);'>{{genre.libelle ~ " " ~ genre.films | length  }} <strong>film(s)</strong></h5> 
+                    </div>
+                    <div class="d-flex justify-content-evenly">
+                        <button type="button" class="btn btn-lg bg-secondary "><a href="{{ path('edit_genre', {'id': genre.id}) }}">Modifier <i class="fa-solid fa-pen-nib"></i></a></button>
+                        <button type="button" class="btn btn-lg bg-secondary"><a href="{{ path('delete_genre', {'id': genre.id}) }}">Suppirmer <i class="fa-solid fa-trash"></i></a></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>    
+</div>
+{% endblock %}

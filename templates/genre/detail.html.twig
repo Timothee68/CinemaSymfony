@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des genres!{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <h1 class="text-center" >Les films par genre</h1>
+    <h2 class="text-center">{{ genre.libelle  }}</h2>
+    <div class="row row-cols-md-5 g-4 mt-5 d-flex justify-content-evenly">
+        {% for film in genre.films %}
+            <div class="card  mt-4 mb-4 col-3 bg-dark">
+                <div class="img">
+                    <figure>
+                        <img src="{{ asset(film.affiche) }}" class="detail-film card-img-top" style="max-height:200px;" alt="...">
+                    </figure>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center" style='color:rgb(255, 255, 255);'><a href="{{ path('detail_film', {'id': film.id}) }}">{{ film.titreFilm}}</a></h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>  
+{% endblock %}

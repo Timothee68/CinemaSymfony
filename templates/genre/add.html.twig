@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un film!{% endblock %}
+
+{% block body %}
+
+    {# {{ form(formAddFilm) }} #}
+  {{ form_start(formAddGenre) }}
+    {{ form_errors(formAddGenre) }}
+        <div class="container">
+            <div class="row d-flex justify-content-evenly">
+                <div class="col-4 mb-4 mt-4">
+                    {{ form_row(formAddGenre.libelle) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 mt-4 d-flex justify-content-evenly">   
+                    {{ form_row(formAddGenre.submit, { 'label': 'Submit me' }) }}
+                </div>
+            </div>   
+        </div> 
+     {{ form_end(formAddGenre) }}    
+
+{% endblock %}
+
+

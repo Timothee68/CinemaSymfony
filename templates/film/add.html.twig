@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un film!{% endblock %}
+
+{% block body %}
+
+    {# {{ form(formAddFilm) }} #}
+          {{ form_start(formAddFilm) }}
+          {{ form_errors(formAddFilm) }}
+               <div class="container">
+                    <div class="row">
+                         <div class="col-4 mb-4 mt-4">
+                              {{ form_row(formAddFilm.titreFilm) }}
+                         </div>
+                         <div class="col-4 mb-4 mt-4">
+                              {{ form_row(formAddFilm.anneeSortie) }}
+                         </div>
+                         <div class="col-4 mb-4 mt-4">   
+                              {{ form_row(formAddFilm.dureeMin) }}
+                         </div>
+                         <div class="col-4 mb-4">   
+                              {{ form_row(formAddFilm.synopsis) }}
+                         </div>
+                         <div class="col-4 mb-4">   
+                              {{ form_row(formAddFilm.note) }}
+                         </div>
+                         <div class="col-4">        
+                              {{ form_row(formAddFilm.affiche) }}
+                         </div>
+                          <div class="col-4 mb-4">        
+                              {{ form_row(formAddFilm.realisateur) }}
+                         </div>
+                         <div class="col-12 mb-4">   
+                              {{ form_row(formAddFilm.genres) }}
+                         </div>
+                         <div class="row">
+                              <div class="col-4 mt-4">   
+                                   {{ form_row(formAddFilm.submit, { 'label': 'Envoyer' }) }}
+                              </div>
+                         </div>     
+                    </div>   
+               </div> 
+     {{ form_end(formAddFilm) }}
+    
+
+{% endblock %}

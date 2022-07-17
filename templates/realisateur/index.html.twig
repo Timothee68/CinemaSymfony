@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Réalisateurs!{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <h1 class="mb-5 text-center">Les réalisateurs</h1>
+    <div class="row">
+        <div class="d-flex justify-content-evenly">
+            <button type="button" class="btn btn-lg bg-secondary mt-2 "><a href="{{ path('add_realisateur') }}">Ajouter un réalisateur a la liste</a></button>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-6 g-4 mt-5 d-flex justify-content-evenly">
+        {% for realisateur in realisateurs %}
+            <div class="card m-2 mt-4 mb-4 bg-dark">
+                <figure>
+                    <a href="{{ path('detail_realisateur', {'id': realisateur.id} ) }}"><img src=" {{ realisateur.imageRealisateur}}" class="img-fluid card-img-top" style="max-height:200px;"  alt="..."></a>
+                </figure>
+                <div class="card-text">
+                    <h5 class="card-title text-center"><a href="{{ path('detail_realisateur', {'id': realisateur.id} ) }}">{{realisateur }}</a></h5>
+                </div>
+                <hr class="bg-light">
+               <div class="d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-lg bg-secondary"><a href="{{ path('edit_realisateur', {'id': realisateur.id}) }}">Modifier <i class="fa-solid fa-pen-nib"></i></a></button>
+                    <button type="button" class="btn btn-lg bg-secondary"><a href="{{ path('delete_realisateur', {'id': realisateur.id}) }}">Suppirmer <i class="fa-solid fa-trash"></i></a></button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div> 
+{% endblock %}

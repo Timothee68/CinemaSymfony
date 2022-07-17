@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste film!{% endblock %}
+
+{% block body %}
+
+<div class="col d-flex justify-content-evenly">
+    <div class="card mb-3  mt-5" style="max-width: 540px;">
+        <img src="{{ asset(film.affiche)  }}" class="detail-film card-img-top"  alt="...">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">{{ film.titreFilm }}</h2>
+            <p class="genre card-text text-center mt-2" id="genre">
+            {% for genre in film.genres %}
+            <strong><a href=" {{ path('detail_genre', {'id': genre.id} ) }}  ">{{ genre.libelle ~ "/"}}  </a></strong>
+            {% endfor %}
+            </p>
+            <p class="card-text text-center"><strong>Synopsis : </strong> </p>
+            <p class="card-text">{{ film.Synopsis }}</p>
+            <p class="genre card-text text-center">Réalisé(e) par <a href="{{path('detail_realisateur' , {'id': film.realisateur.id})}}">{{ film.realisateur}}</a></p>
+            <p class="card-text text-center">Durée : {{ film.hours }}</p>
+            <p class="card-text text-center">{{ film.note }} sur 5</p>
+            <p class="card-text text-center"> {{film.showStars}}</p>
+            <p class="card-text text-center"><small class="text-muted">Sortie le : {{ film.anneeSortie | date("d/m/Y") }}</small></p>
+        </div>
+    </div>
+</div>     
+{% endblock %}
